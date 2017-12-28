@@ -4,9 +4,9 @@ from torch.autograd import Variable
 import torch.nn.functional as F
 
 
-class block(nn.Module):
+class Block(nn.Module):
     def __init__(self):
-        super(block, self).__init__()
+        super(Block, self).__init__()
 
         self.conv_1 = nn.Conv2d(
             in_channels=1,
@@ -30,8 +30,8 @@ class SimpleVGG(nn.Module):
     def __init__(self):
         super(SimpleVGG, self).__init__()
 
-        self.block_1 = block()
-        self.block_2 = block()
+        self.block_1 = Block()
+        self.block_2 = Block()
         self.block_2.conv_1 = nn.Conv2d(
             in_channels=3,
             out_channels=3,
